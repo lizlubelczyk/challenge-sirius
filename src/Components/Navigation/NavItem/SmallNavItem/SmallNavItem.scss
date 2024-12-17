@@ -1,0 +1,13 @@
+@import '../../../../../variables.scss';
+.small-nav-item{
+  width: 56px;
+  height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  border-radius: 40px;
+
+  &:hover{
+    background-color: $grey-hover;
+  }
+}
