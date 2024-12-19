@@ -7,10 +7,12 @@ LargeNavItem.propTypes = {
     active: PropTypes.bool
 }
 
-export default function LargeNavItem({ icon, title, active }) {
+export default function LargeNavItem({ icon, title, active, darkMode }) {
     return (
-        <div className={`large-nav-item ${active ? 'active' : ''}`}>
-            {icon}
+        <div className={`large-nav-item ${active ? 'active' : ''} ${darkMode ? 'dark-mode' : ''}`}>
+            <div className="icon">
+                {icon}
+            </div>
             <div className="name">{title}</div>
         </div>
     )

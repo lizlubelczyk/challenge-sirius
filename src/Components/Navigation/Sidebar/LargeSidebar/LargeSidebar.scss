@@ -1,9 +1,19 @@
 .large-sidebar{
-  width: 332px;
+  width: 242px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   height: 100vh;
+
+  .large-sidebar-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .theme-switch{
+      margin-right: 32px;
+    }
+  }
 
   .large-sidebar-items{
     display: flex;
@@ -15,5 +25,9 @@
 
   .button{
     margin-top: 16px;
+  }
+
+  &.dark-mode{
+
   }
 }

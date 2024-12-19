@@ -1,0 +1,32 @@
+@import '../../../../variables.scss';
+.theme-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.theme-switch .icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  height: 75%;
+}
+
+.theme-switch svg {
+  width: 24px;
+  height: 24px;
+}
+
+.theme-switch.dark-mode {
+  background-color: white;
+  .icon-container {
+    color: black;
+  }
+}

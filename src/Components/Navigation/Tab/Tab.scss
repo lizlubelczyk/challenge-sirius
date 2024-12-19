@@ -29,4 +29,9 @@
     background-color: #1d9bf0;
     border-radius: 2px;
   }
+
+  &.dark-mode{
+    color: white;
+    border-bottom: 1px solid $grey-text-2;
+  }
 }

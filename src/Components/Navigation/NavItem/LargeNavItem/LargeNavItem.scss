@@ -4,12 +4,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @include h5;
   font-weight: 400;
   border-radius: 40px;
   gap: 16px;
   padding: 16px;
   cursor: pointer;
+  color:black;
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+  }
 
   .name {
     margin: 0;
@@ -22,5 +31,18 @@
 
   &:hover {
     background-color: $grey-hover;
+  }
+
+  &.dark-mode {
+    background-color: black;
+    color: white;
+
+    .icon {
+      color: white;
+
+    }
+    .name{
+        color: white;
+    }
   }
 }

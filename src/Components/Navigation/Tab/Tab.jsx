@@ -12,10 +12,12 @@ Tab.defaultProps = {
     onClick: () => {}
 };
 
-export default function Tab({ title, active, onClick }) {
+export default function Tab({ title, active, onClick, darkMode }) {
     return (
         <div
-            className={`tab-item ${active ? "active" : ""}`}
+            className={`tab-item ${active ? "active" : ""} ${
+                darkMode ? "dark-mode" : ""
+            }`}
             onClick={onClick}
         >
             <div className="tab-title">{title}</div>

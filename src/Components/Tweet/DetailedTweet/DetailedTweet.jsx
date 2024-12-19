@@ -1,10 +1,10 @@
-import "./Tweet.scss";
 import Actions from "../Actions/Actions";
 import { useState } from "react";
 import { likeTweet } from "../../../services/LikeService";
 import {retweet} from "../../../services/RetweetService";
+import "./DetailedTweet.scss"
 
-export default function Tweet({ tweet, onClick, darkMode }) {
+export default function DetailedTweet({ tweet, onClick, darkMode }) {
     const [likes, setLikes] = useState(tweet?.reactions?.filter(reaction => reaction.type === "LOVE").length || 0);
     const [retweets, setRetweets] = useState(tweet?.reactions?.filter(reaction => reaction.type === "RETWEET").length || 0);
     const [comments, setComments] = useState(tweet?.comments.length || 0);
@@ -13,11 +13,19 @@ export default function Tweet({ tweet, onClick, darkMode }) {
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
-        return date.toLocaleDateString("en-US", {
-            month: "short",
-            day: "numeric",
-        });
+
+        const options = {
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true,
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric',
+        };
+
+        return date.toLocaleString('en-US', options).replace(',', ' ·');
     };
+
 
     const handleLike = async () => {
         try {
@@ -44,7 +52,7 @@ export default function Tweet({ tweet, onClick, darkMode }) {
     }
 
     return (
-        <div className={`tweet ${darkMode ? 'dark-mode' : ''}`}onClick={onClick}>
+        <div className={`detailed-tweet ${darkMode ? 'dark-mode' : ''}`} onClick={onClick}>
             <div className="info-container">
                 <div className="profile-picture">
                     {tweet?.author?.profilePicture && (
@@ -54,18 +62,20 @@ export default function Tweet({ tweet, onClick, darkMode }) {
                 <div className="info">
                     <div className="name">{tweet?.author?.firstName}</div>
                     <div className="username">@{tweet?.author?.username}</div>
-                    <span className="separator"> • </span>
-                    <div className="date">{formatDate(tweet?.createdAt)}</div>
+
                 </div>
             </div>
             <div className="content">
                 {tweet?.content}
             </div>
             {tweet?.images && tweet.images.length > 0 && (
-                <div className="images">
-                    <img src={tweet.images[0]} alt="Tweet image 1" />
+                <div className="images-container">
+                    {tweet.images.map((image, index) => (
+                        <img key={index} src={image} alt={`Tweet image ${index + 1}`} />
+                    ))}
                 </div>
             )}
+            <div className={"date"}>{formatDate(tweet.createdAt)}</div>
             <Actions likes={likes} comments={comments} retweets={retweets} isLiked={isLiked} onLike={handleLike} isRetweeted={isRetweeted} onRetweet={handleRetweet} />
         </div>
     );
