@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './SearchBar.scss';
 import PropTypes from "prop-types";
 
-export default function SearchBar({ onSearch, mode }) {
+export default function SearchBar({ onSearch, mode, darkMode }) {
     const [searchTerm, setSearchTerm] = useState('');
     const [isActive, setIsActive] = useState(false);
 
@@ -18,14 +18,21 @@ export default function SearchBar({ onSearch, mode }) {
         setIsActive(false);
     };
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            onSearch(searchTerm);
+        }
+    };
+
     return (
-        <div className={`search-bar ${mode} ${isActive ? 'active' : 'inactive'}`}>
+        <div className={`search-bar ${mode} ${isActive ? 'active' : 'inactive'} ${darkMode ? 'dark-mode' : ''}`}>
             <input
                 type="text"
                 value={searchTerm}
                 onChange={handleInputChange}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
+                onKeyDown={handleKeyDown}
                 placeholder="Search..."
             />
         </div>

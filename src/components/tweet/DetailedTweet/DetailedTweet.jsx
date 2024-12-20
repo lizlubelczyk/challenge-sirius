@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 export default function DetailedTweet({ tweet, onClick, darkMode }) {
     const [likes, setLikes] = useState(tweet?.reactions?.filter(reaction => reaction.type === "LOVE").length || 0);
     const [retweets, setRetweets] = useState(tweet?.reactions?.filter(reaction => reaction.type === "RETWEET").length || 0);
-    const [comments, setComments] = useState(tweet?.comments.length || 0);
+    const [comments] = useState(tweet?.comments.length || 0);
     const [isLiked, setIsLiked] = useState(false);
     const [isRetweeted, setIsRetweeted] = useState(false);
 
@@ -17,7 +17,7 @@ export default function DetailedTweet({ tweet, onClick, darkMode }) {
             <div className="info-container">
                 <div className="profile-picture">
                     {tweet?.author?.profilePicture && (
-                        <img src={tweet.author.profilePicture} alt="Profile" />
+                        <img src={tweet.author.profilePicture} alt={`${tweet.author.firstName}'s profile`} />
                     )}
                 </div>
                 <div className="info">
@@ -40,7 +40,6 @@ export default function DetailedTweet({ tweet, onClick, darkMode }) {
         </div>
     );
 }
-
 DetailedTweet.propTypes = {
     tweet: PropTypes.shape({
         id: PropTypes.string.isRequired,

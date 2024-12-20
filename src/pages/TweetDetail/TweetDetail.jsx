@@ -1,14 +1,10 @@
 import React from 'react';
 import tweets from '../../resources/tweets (2).json';
-import { useState } from "react";
 import {useNavigate, useParams} from "react-router-dom";
-import LargeSidebar from "../../components/navigation/Sidebar/LargeSidebar";
-import Tweet from "../../components/tweet/Tweet/Tweet";
 import Comment from "../../components/tweet/Comment/Comment";
 import "./TweetDetail.scss";
 import DetailedTweet from "../../components/tweet/DetailedTweet/DetailedTweet";
 import BackArrow from "../../components/icons/tweet/BackArrow";
-import { useHistory } from 'react-router-dom';
 
 export default function TweetDetail({darkMode}) {
     const { tweetId } = useParams();
