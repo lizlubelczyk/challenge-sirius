@@ -26,7 +26,7 @@ export default function LargeSidebar({ changeMode, darkMode }) {
                 <LargeNavItem icon={<Message />} title="Messages" darkMode={darkMode} />
                 <LargeNavItem icon={<Profile />} title="Profile"  darkMode={darkMode}/>
             </div>
-            <Button className={"button"} size={"medium"} text={"tweet"} mode={"default"}></Button>
+            <Button className={"button"} size={"medium"} text={"Tweet"} mode={"default"}></Button>
         </div>
     );
 }
