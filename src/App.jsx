@@ -1,8 +1,9 @@
 import './App.css';
-import Home from "./screens/Home/Home";
+import Home from "./pages/Home/Home";
 import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
-import TweetDetail from "./screens/tweetDetail/TweetDetail";
+import TweetDetail from "./pages/TweetDetail/TweetDetail";
 import {useState} from "react";
+import LargeSidebar from "./components/navigation/Sidebar/LargeSidebar";
 
 function App() {
     const [darkMode, setDarkMode] = useState(false);
@@ -12,7 +13,10 @@ function App() {
     }
   return (
     <Router>
-      <div className="content">
+      <div className={`content ${darkMode ? 'dark-mode' : ''}`} >
+          <div className="sidebar">
+              <LargeSidebar changeMode={changeMode} darkMode={darkMode}/>
+          </div>
         <Routes>
           <Route path="/" exact element={<Home darkMode={darkMode} changeMode={changeMode}/>} />
           <Route path="/tweetDetail/:tweetId" element={<TweetDetail darkMode={darkMode} changeMode={changeMode}/>} />

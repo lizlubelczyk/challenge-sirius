@@ -1,0 +1,63 @@
+@import '../../../../../variables';
+
+.button{
+  border-radius: 40px;
+  padding: 8px 16px 8px 16px;
+  height: 33px;
+  @include button-medium;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+
+  &.large{
+    width: 434px;
+  }
+
+  &.medium{
+    width: 210px;
+  }
+
+  &.small{
+    width: 82px;
+  }
+
+  &.default{
+    background-color: $primary-main ;
+    color: white;
+    &:hover{
+      background-color: $primary-dark;
+    }
+  }
+
+  &.disabled{
+    background-color: $primary-light;
+    color: white;
+  }
+
+  &.delete{
+    background-color: $state-error;
+    color: white;
+  }
+
+  &.outline{
+    background-color: white;
+    color: $primary-main;
+    border: 1px solid $grey-outline;
+    &:hover{
+      background-color: $grey-hover;
+    }
+  }
+
+  &.follow{
+    background-color: black;
+    color: white;
+    &:hover{
+      background-color: $primary-dark;
+    }
+  }
+
+
+}
+

@@ -1,0 +1,58 @@
+@import '../../../../variables';
+
+.suggestion-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $grey-inactive-bg;
+  border-radius: 16px;
+  padding: 16px;
+  gap: 16px;
+  box-sizing: border-box;
+
+  .title {
+    @include h6;
+    color: black;
+  }
+
+  .suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .show-more-button {
+    display: flex;
+    justify-content: left;
+
+    button {
+      @include body-1-bold;
+      color: $primary-main;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 8px;
+      background-color: transparent;
+
+      &:hover {
+        color: $grey-text-2;
+      }
+    }
+  }
+
+  &.dark-mode {
+    background-color: $grey-dark-bg;
+
+    .title {
+      color: $white;
+    }
+
+    .show-more-button {
+      button {
+        &:hover {
+          color: $grey-text-2;
+        }
+      }
+    }
+  }
+}

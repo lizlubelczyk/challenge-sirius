@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.content{
+  display: flex;
+  .sidebar{
+    padding-top: 32px;
+    padding-left: 32px;
+  }
+  &.dark-mode{
+    background-color: black;
+  }
+}

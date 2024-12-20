@@ -1,0 +1,60 @@
+@import "../../../variables";
+.tweet-detail {
+  display: flex;
+  width: 100%;
+  .sidebar-container {
+    height: 100%;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .tweet-detail-container {
+    width: 60%;
+    border-right: 1px solid $grey-container-line;
+    border-left: 1px solid $grey-container-line;
+    padding-top: 32px;
+    height: 100vh;
+    overflow: hidden;
+    .container-header {
+      display: flex;
+      color: black;
+      justify-content: space-between;
+      padding-right: 32px;
+      position: sticky;
+      top: 0;
+      background-color: inherit;
+      z-index: 1;
+      .title {
+        @include h5;
+        margin-bottom: 16px;
+        margin-left: 16px;
+        color: black;
+      }
+      .arrow {
+        margin-right: 32px;
+        cursor: pointer;
+      }
+    }
+    .tweet-and-comments {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+      .tweet {
+        max-width: 100%;
+      }
+    }
+  }
+  &.dark-mode {
+    background-color: black;
+    .tweet-detail-container {
+      border-left: 1px solid $grey-text-2;
+      border-right: 1px solid $grey-text-2;
+      .container-header {
+        color: white;
+        .title {
+          color: white;
+        }
+      }
+    }
+  }
+}

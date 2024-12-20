@@ -1,0 +1,55 @@
+@import "../../../variables";
+.home-page {
+  display: flex;
+  padding: 0 32px 0 32px;
+
+  .feed-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-left: 1px solid $grey-container-line;
+    border-right: 1px solid $grey-container-line;
+    padding-top: 32px;
+    height: 100vh;
+
+    .title {
+      @include h5;
+      margin-bottom: 16px;
+      margin-left: 16px;
+      z-index: 1;
+    }
+
+    .tabs {
+      display: flex;
+      z-index: 1;
+    }
+
+    .feed {
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+  }
+
+  .suggestions-container {
+    width: 360px;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &.dark-mode {
+    background-color: black;
+
+    .feed-container {
+      border-left: 1px solid $grey-text-2;
+      border-right: 1px solid $grey-text-2;
+
+      .title {
+        color: $white;
+      }
+    }
+  }
+}

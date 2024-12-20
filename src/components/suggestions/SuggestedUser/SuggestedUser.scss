@@ -1,0 +1,43 @@
+@import '../../../../variables.scss';
+.user{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  .profile-picture{
+    img{
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+  .info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .name{
+        @include body-1-bold;
+      margin-right: 5px;
+    }
+    .username{
+      margin-right: 5px;
+      @include body-1;
+        color: $grey-text-2;
+    }
+  }
+  .follow-button{
+    margin-left: auto;
+  }
+
+  &.dark-mode{
+    .info{
+      .name{
+        color: $grey-container-line;
+      }
+      .username{
+        color: $grey-text-2;
+      }
+    }
+
+  }
+}

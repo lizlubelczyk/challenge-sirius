@@ -1,0 +1,23 @@
+@import '../../../../../variables.scss';
+
+.show-more {
+  @include body-1-bold;
+  color: $primary-main;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: transparent;
+
+  &:hover {
+    background-color: $grey-hover;
+  }
+
+  &.dark-mode {
+    color: $white;
+
+    &:hover {
+      color: $grey-text-2;
+    }
+  }
+}
