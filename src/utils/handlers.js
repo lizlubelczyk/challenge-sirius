@@ -9,7 +9,7 @@ export const handleLike = async (tweetId, isLiked, setIsLiked, setLikes, likes) 
             setLikes(isLiked ? likes - 1 : likes + 1);
         }
     } catch (error) {
-        console.error('Error liking tweet:', error);
+        console.error('Error liking tweets:', error);
     }
 };
 
@@ -21,6 +21,6 @@ export const handleRetweet = async (tweetId, isRetweeted, setIsRetweeted, setRet
             setRetweets(isRetweeted ? retweets - 1 : retweets + 1);
         }
     } catch (error) {
-        console.error('Error retweeting tweet:', error);
+        console.error('Error retweeting tweets:', error);
     }
 };

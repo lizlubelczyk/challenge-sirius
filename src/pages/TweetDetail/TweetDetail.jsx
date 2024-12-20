@@ -1,9 +1,9 @@
 import React from 'react';
 import tweets from '../../resources/tweets (2).json';
 import {useNavigate, useParams} from "react-router-dom";
-import Comment from "../../components/tweet/Comment/Comment";
+import Comment from "../../components/tweets/Comment/Comment";
 import "./TweetDetail.scss";
-import DetailedTweet from "../../components/tweet/DetailedTweet/DetailedTweet";
+import DetailedTweet from "../../components/tweets/DetailedTweet/DetailedTweet";
 import BackArrow from "../../components/icons/tweet/BackArrow";
 
 export default function TweetDetail({darkMode}) {

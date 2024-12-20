@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Tabs from '../../components/navigation/Tabs/Tabs';
-import Tweet from '../../components/tweet/Tweet/Tweet';
+import Tweet from '../../components/tweets/Tweet/Tweet';
 import Suggestions from '../../components/suggestions/Suggestions/Suggestions';
 import SearchBar from '../../components/input/textfield/Search/SearchBar';
 import { fetchTweets } from '../../services/TweetService';

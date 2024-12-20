@@ -2,7 +2,7 @@ import React from 'react';
 import Actions from './Actions';
 
 export default {
-    title: 'tweet/Actions',
+    title: 'tweets/Actions',
     component: Actions,
 };
 
